@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :require_login
 
     def show
         @user = User.find(params[:id])
@@ -10,9 +11,12 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        @user.save
-        #raise params.inspect
-        redirect_to user_path(@user)
+        if @user.save
+            #raise params.inspect
+            redirect_to user_path(@user)
+        else
+            render 'users/new'
+        end
     end
 
     private

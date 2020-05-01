@@ -5,16 +5,17 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(email: params[:user][:email])
+        @user = User.find_by(email: params[:email])
         if @user || @user.authenticate(password: params[:user][:password])
-            session[:username] = params[:username]
-            redirect_to '/'
+            session[:user_id] = @user.id
+            redirect_to user_shopping_lists_path
         else
             redirect_to '/login'
         end
     end
 
     def destroy
-        session.delete :username
+        reset_session
+        redirect_to login_path
       end
 end
