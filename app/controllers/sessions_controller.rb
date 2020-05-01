@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:email])
         if @user || @user.authenticate(password: params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to user_shopping_lists_path
+            redirect_to user_shopping_lists_path(@user)
         else
             redirect_to '/login'
         end
