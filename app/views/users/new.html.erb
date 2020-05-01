@@ -1,0 +1,15 @@
+
+<h1>Manage Your Time In and Out of Your Favorite Grocery Stores!</h1>
+<h3>Create an account on Shopilator to access free budegeting tools.</h3>
+
+
+
+<%= form_for @user do |f| %>
+    <%= f.text_field :username, placeholder: "Name"%> <br><br>
+    <%= f.email_field :email, placeholder: "Email"%> <br><br>
+    <%= f.password_field :password, placeholder: "Password" %> <br><br>
+    <%= f.submit "Get Started"%><br><br>
+    
+    Already have and account? SIGN UP
+  
+<% end %>

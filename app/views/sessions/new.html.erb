@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<%= form_for @user do |f| %>
+    <%= f.email_field :email, placeholder: "Email"%> <br><br>
+    <%= f.password_field :password, placeholder: "Password" %> <br><br>
+    <%= f.submit "Get Started"%><br><br>
+    
+    Don't have an account? SIGN UP
+  
+<% end %>
