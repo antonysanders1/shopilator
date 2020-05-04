@@ -1,9 +1,16 @@
-<h1>Login</h1>
-<%= form_tag (sessions_path) do %>
-    <%= email_field_tag :email, "", placeholder: "Email"%> <br><br>
-    <%= password_field_tag :password, "", placeholder: "Password" %> <br><br>
-    <%= submit_tag "Get Started"%><br><br>
-    
-    Don't have an account? SIGN UP
-  
-<% end %>
+<div class="signup-form">
+    <img src="shopilator.jpg">
+        <h1>Welcome Back!</h1>
+        <p> <strong>Login to access your free budegeting tools.</strong> </p>
+
+        <%= form_tag (sessions_path) do %>
+        <%= email_field_tag :email, "", placeholder: "Email", class: "input-box"%> <br>
+        <%= password_field_tag :password, "", placeholder: "Password", class: "input-box" %> <br>
+        <%= submit_tag "Get Started", class: "signup-btn"%>  <br>
+        <hr>
+        <p class="or">OR</p>
+        <button type="button" class="twitter-btn">Login with Twitter</button><br>
+        <p class="has-acount"> Don't have an account? <%= link_to "SIGN UP", new_user_path %> </p>
+
+    <% end %>
+</div>

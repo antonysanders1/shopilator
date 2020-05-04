@@ -1,0 +1,73 @@
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, rgba(0, 92, 153, 0.7), rgba(236, 240, 241, 1.0)), url(15778.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top
+}
+
+.welcome {
+    width: 60%;
+    height: 400px;
+    background: #fff;
+    padding: 30px;
+    margin: 4% auto;
+}
+
+.signup-form {
+    width: 300px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 30px;
+    margin: 4% auto;
+    text-align: center;
+}
+
+.signup-form h1 {
+    color: rgba(0, 92, 153, 1);
+    margin-bottom: 20px;
+}
+
+.input-box {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 95%;
+    border: 1px solid #999;
+    outline: none;
+}
+
+.signup-btn {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 60%;
+    border: none;
+    outline: none;
+}
+
+.or {
+    background: #fff;
+    width: 30px;
+    margin: -18px auto 5px;
+}
+
+.twitter-btn {
+    background-color: #21afde;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 60%;
+    border: none;
+    outline: none;
+}
+
+img {
+    width: 70px;
+    margin-top: -70px;
+    border-radius: 50%;
+}
+
+.has-account {
+    margin: 10px;
+}

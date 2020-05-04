@@ -16,3 +16,8 @@ TODO:
     - Create new list button
 
 4. 
+
+
+[removed from applications css]
+ *= require_tree .
+ *= require_self
