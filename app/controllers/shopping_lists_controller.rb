@@ -3,13 +3,18 @@ class ShoppingListsController < ApplicationController
   
   def index
     if params[:user_id].present?
-      @user = User.find_by(id: params[:user_id])
-      @lists = @user.shopping_lists.all
+      @user = current_user
+      #@user = User.find_by(id: params[:user_id])
+      @lists = current_user.shopping_lists.all
       #raise @lists.inspect
     else
-      redirect to user_shopping_lists_path
+      redirect_to user_shopping_lists_path
     end
     #binding.pry
+  end
+
+  def show
+    @list = current_user.shopping_lists.find(params[:id])
   end
   
   def new
@@ -28,6 +33,12 @@ class ShoppingListsController < ApplicationController
     else
       render :new
     end
+  end
+
+  
+
+  def edit
+    
   end
 
   private

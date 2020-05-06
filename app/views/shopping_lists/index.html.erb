@@ -1,4 +1,25 @@
-<h1><%=@user.username%> | Shopping Lists:</h1>
+<nav>
+    
+    <input type="checkbox" id="check">
+    
+    <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i>
+        </label>
+        
+    <img src="https://i.ibb.co/GWnZgd2/shopilator-logo-wht-nobkg.png" id="logoimg">
+    <label class="user-title"><%=@user.username%></label>
+
+        <ul>
+            <li> <a href="/" class="header-link">Account</a></li>
+            <li><a href="/" class="header-link">My Lists</a></li>
+            <li><a href="/" class="header-link">Create A New List</a></li>
+            <li><a href="/" class="header-link">Contact</a></li>
+            <li><a href="/logout" class="header-link">Logout</a></li>
+        </ul>
+</nav>
+
+<h1>Shopping Lists:</h1>
+
 
     <% @lists.each do |list| %>
 
@@ -9,7 +30,7 @@
                 <label id="year">2020</label>
             </td>
             <td class="list-td" id="details"> 
-                <label ><%= link_to list.name , user_shopping_lists_path, id:"list-name" %></label><br>
+                <label ><a id="list-name" href="/users/<%=current_user.id%>/shopping_lists/<%=list.id%>"><%=list.name%></a></label><br>
                 <label id="store-name"><%= list.store_id %> {STORE NAME HERE}</label>
             </td> 
             <td class="list-td" id="budget">
@@ -26,4 +47,5 @@
 <br>
 <br>
 
-<%= link_to "Create A New List", new_user_shopping_list_path%>
+<%= link_to "Create A New List", new_user_shopping_list_path, id:"create"%>
+
