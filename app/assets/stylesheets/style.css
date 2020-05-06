@@ -20,19 +20,10 @@ nav {
 }
 
 #logoimg {
-    width: 30px;
-    line-height: 90px;
+    width: 50px;
+    margin-top: 15px;
     margin-left: 20px;
     background-image: url("images/shopilator.jpg");
-}
-
-label.logo {
-    color: #fff;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100x;
-    font-weight: bold;
-    margin-left: 10px;
 }
 
 nav ul {
@@ -54,8 +45,8 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-a.active,
-a:hover {
+.header-link:hover,
+.header-link:active {
     background: #1e8106;
     transition: .5s;
 }
@@ -74,9 +65,55 @@ a:hover {
     display: none;
 }
 
+#left,
+#right {
+    height: 80vh;
+    width: 100%;
+}
+
+#left {
+    float: left;
+    width: 60%;
+    background: linear-gradient(to bottom, rgba(12, 41, 9, 0.808), rgba(12, 41, 9, 0.479)), url("https://i.ibb.co/9pvjHzQ/15778.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+label.title {
+    color: #5bbe43;
+    font-size: 80px;
+    padding: 0 100x;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+#subtitle {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+#right {
+    background-color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+#welcome-logo-r {
+    height: 200px;
+    width: 200px;
+}
+
 @media (max-width: 952px) {
-    label.logo {
+    label.title {
         font-size: 30px;
+    }
+    #subtitle {
+        font-size: 20px;
     }
     nav ul li a {
         font-size: 13px;
@@ -113,8 +150,8 @@ a:hover {
     nav ul li a {
         font-size: 20px;
     }
-    a:hover,
-    a.active {
+    .header-link:hover,
+    .header-link:active {
         background: none;
         color: #5bbe43;
     }
@@ -150,12 +187,23 @@ a:hover {
 }
 
 .signup-btn {
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 10px;
     margin: 10px 0;
-    width: 60%;
+    width: 200px;
     border: none;
     outline: none;
+    background: #5bbe43;
+}
+
+.signup-btn:hover {
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    width: 200px;
+    border: none;
+    outline: none;
+    background: #17350f;
 }
 
 .or {
@@ -176,4 +224,102 @@ a:hover {
 
 .has-account {
     margin: 10px;
+}
+
+
+/*--------------------User Lists----------------------------------- */
+
+#list-table {
+    width: 80%;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+#list-tr {
+    text-align: left;
+}
+
+.list-td {
+    padding: 5px;
+}
+
+#date {
+    text-align: center;
+    background-color: #21afde;
+    width: 8%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#month-day {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#year {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#details {
+    text-decoration: none;
+    width: 70%;
+    background-color: #fff;
+}
+
+#list-name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1e8106;
+    text-decoration: none;
+}
+
+#list-name:hover {
+    font-size: 24px;
+}
+
+#store-name {
+    font-size: 10px;
+}
+
+#budget {
+    width: 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+#total {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#list-options {
+    text-align: center;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #fff;
+}
+
+#edit-list {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#edit-list:hover {
+    color: tomato;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#delete-list {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#delete-list:hover {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
 }

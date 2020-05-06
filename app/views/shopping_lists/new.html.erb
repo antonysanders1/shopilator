@@ -1,2 +1,25 @@
 <h1>ShoppingLists#new</h1>
-<p>Find me in app/views/shopping_lists/new.html.erb</p>
+
+
+<%= form_for @list, url:user_shopping_lists_path  do |f| %>
+  
+    <%= f.hidden_field "user_id", value: current_user.id  %>
+    <%= f.text_field :name, placeholder: "Shopping List Name" %> <br>
+
+    
+  <%= collection_select(:shopping_list, :store_id, Store.all,
+                  :id, :name,
+                 {:prompt => 'Please select a Store'}) %> <br>
+ 
+        
+        <%= f.submit "CREATE", class: "signup-btn"%><br>
+
+<% end %>
+
+
+
+t.string "name"
+    t.integer "user_id"
+    t.integer "store_id"@
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false

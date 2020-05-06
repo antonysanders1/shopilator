@@ -11,4 +11,5 @@ resources :users, only: [:create, :new, :edit, :show, :update, :destroy] do
   resources :shopping_lists
 end
 
+
 end

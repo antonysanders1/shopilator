@@ -4,25 +4,31 @@
         <i class="fa fa-bars"></i>
         </label>
     <img src="https://i.ibb.co/GWnZgd2/shopilator-logo-wht-nobkg.png" id="logoimg">
-    <label class="logo">Shopilator</label>
         <ul>
-            <li> <a href="/" class="active">Home</a></li>
-            <li><a href="/">About Us</a></li>
-            <li><a href="/">Services</a></li>
-            <li><a href="/">Contact</a></li>
-            <li><a href="/login">Login</a></li>
+            <li> <a href="/" class="header-link">Home</a></li>
+            <li><a href="/" class="header-link">About Us</a></li>
+            <li><a href="/" class="header-link">Services</a></li>
+            <li><a href="/" class="header-link">Contact</a></li>
+            <li><a href="/login" class="header-link">Login</a></li>
         </ul>
 </nav>
 
-<div class="welcome">
-    <img src="shopilator.jpg">
-        <h1>Better Manage Your Grocery Time!</h1>
-        <p> <strong>Create an account on Shopilator to access free budegeting tools.</strong> </p>
 
-        <button type='button' class="signup-btn"><%=link_to "SIGN UP", new_user_path %></button>
-        <button type='button' class="signup-btn"><%= link_to "LOGIN", login_path %></button>
+<div id="welcome-container">
+    <section id="left">
+        <label class="title">Shopilator</label>
+        <h1 id="subtitle">Manage Your Grocery Time Better.</h1>
+    </section>
+    <section id="right">
+    <img src="https://i.ibb.co/BC91qF6/shopilator-green-nobkg.png" id="welcome-logo-r">
+            <p> <strong>Create an account on Shopilator to access free budegeting tools.</strong> </p>
 
-</div>
+            <button type='button' class="signup-btn" ><%=link_to "Create an Account", new_user_path %></button><br>
+            
+
+    </section>
+        
+</div> <!--End of Welcome Container-->
         
 
 

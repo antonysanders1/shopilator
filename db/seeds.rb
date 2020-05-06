@@ -6,6 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Store.destroy_all
+
+Store.create(name: 'Aldi')
+Store.create(name: 'CVS')
+Store.create(name: 'Costco')
+Store.create(name: 'Ingles')
+Store.create(name: 'Kmart')
+Store.create(name: 'Kroger')
+Store.create(name: 'Meijer')
+Store.create(name: 'Piggly Wiggly')
+Store.create(name: 'Publix')
+Store.create(name: "Sam's Club")
+Store.create(name: 'Walmart')
+Store.create(name: 'Walgreens')
+Store.create(name: 'Whole Foods')
+
 
 # List of Stores:
 # Aldi
@@ -13,7 +29,7 @@
 # Costo
 # Ingles
 # Kmart
-# Kroger’s
+# Kroger
 # Meijer
 # Publix
 # Sam’s Club

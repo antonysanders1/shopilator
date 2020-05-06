@@ -1,2 +1,29 @@
-<h1>Welcome back, <%=@user.username%> </h1>
+<h1><%=@user.username%> | Shopping Lists:</h1>
 
+    <% @lists.each do |list| %>
+
+    <table id="list-table" >
+        <tr id="list-tr" >
+            <td class="list-td" id="date">
+                <label id="month-day">JAN 01</label><br>
+                <label id="year">2020</label>
+            </td>
+            <td class="list-td" id="details"> 
+                <label ><%= link_to list.name , user_shopping_lists_path, id:"list-name" %></label><br>
+                <label id="store-name"><%= list.store_id %> {STORE NAME HERE}</label>
+            </td> 
+            <td class="list-td" id="budget">
+                <label id="total">$100</label>
+            </td>
+            <td class="list-td" id="list-options">
+                <label id="edit-list">EDIT</label><br>
+                <label id="delete-list">DELETE</label>
+            </td>  
+        </tr>
+    </table>
+    <% end %>
+
+<br>
+<br>
+
+<%= link_to "Create A New List", new_user_shopping_list_path%>
