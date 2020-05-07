@@ -1,7 +1,8 @@
 class ShoppingList < ApplicationRecord
-    has_many :items
     belongs_to :user
     belongs_to :store
+    has_many :items
+    
 
     validates :name, presence: true
 end

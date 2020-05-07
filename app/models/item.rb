@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-    belongs_to :user
-    belongs_to :store
+    belongs_to :user #, optional: true
+    belongs_to :store, optional: true
     belongs_to :shopping_list
 
     validates :name, presence: true

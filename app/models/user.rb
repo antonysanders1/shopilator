@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :stores
     has_many :shopping_lists
+    has_many :stores, through: :shopping_lists
     has_many :items, through: :shopping_lists
     has_secure_password
     

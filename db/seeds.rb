@@ -1,12 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+#Stores
 Store.destroy_all
+Item.destroy_all
 
 Store.create(name: 'Aldi')
 Store.create(name: 'CVS')
@@ -23,16 +17,38 @@ Store.create(name: 'Walgreens')
 Store.create(name: 'Whole Foods')
 
 
-# List of Stores:
-# Aldi
-# CVS
-# Costo
-# Ingles
-# Kmart
-# Kroger
-# Meijer
-# Publix
-# Sam’s Club
-# Wal-Mart
-# Walgreens
-# WholeFoods
+#Items
+50.times do
+    Item.create([{
+        name: Faker::Commerce.product_name.unique.product_name
+        price: Faker::Commerce.price(range: 10.0..50.0, as_string: true)
+    }])
+end
+
+50.times do
+    Item.create([{
+        name: Faker::Food.fruits.unique.fruits
+        price: Faker::Commerce.price(range: 0.99..6.0, as_string: true)
+    }])
+end
+
+50.times do
+    Item.create([{
+        name: Faker::Food.vegetables.unique.vegetables
+        price: Faker::Commerce.price(range: 0.99..6.0, as_string: true)
+    }])
+end
+
+30.times do
+    Item.create([{
+        name: Faker::Food.spice.unique.spice
+        price: Faker::Commerce.price(range: 0.99..4.0, as_string: true)
+    }])
+end
+
+50.times do
+    Item.create([{
+        name: Faker::Food.dish.unique.dish
+        price: Faker::Commerce.price(range: 5.0..10.0, as_string: true)
+    }])
+end
