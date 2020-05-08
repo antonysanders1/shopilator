@@ -22,3 +22,13 @@ TODO:
  *= require_tree .
  *= require_self
 
+
+ [removed from shopping list show]
+
+<%=form_for @item, url: shopping_list_items_path do |f|%>
+    <%=f.hidden_field "shopping_list_id", value: ShoppingList.id  %>
+    <%=f.hidden_field "user_id", value: current_user.id  %>
+    <%=f.text_field :name, placeholder: "Item name"%>
+    <%=f.text_field :price, placeholder: "Item price"%>
+    <%=f.submit "Add Item"%>
+<% end %>
