@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_100834) do
+ActiveRecord::Schema.define(version: 2020_05_08_063918) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
     t.integer "user_id"
     t.integer "store_id"
-    t.integer "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "shopping_list_id"
   end
 
   create_table "shopping_lists", force: :cascade do |t|
