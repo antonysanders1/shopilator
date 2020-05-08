@@ -15,7 +15,7 @@ resources :users, only: [:create, :new, :edit, :show] do
 end
 
 resources :shopping_lists, only: [:edit, :show, :destroy] do
-  resources :items, only: [:index, :new]
+  resources :items, only: [:index, :new, :create]
 end
 
 resources :items, only: [:destroy]

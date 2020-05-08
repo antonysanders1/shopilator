@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def create
       set_shopping_list
-      @item = @band.items.create(item_params)
+      @item = @list.items.create(item_params)
       redirect_to shopping_list_path(@list)
   end
 
