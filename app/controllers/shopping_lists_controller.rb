@@ -13,6 +13,8 @@ class ShoppingListsController < ApplicationController
 
   def show
     @list = current_user.shopping_lists.find(params[:id])
+    
+    #@item = Item.new
   end
   
 
