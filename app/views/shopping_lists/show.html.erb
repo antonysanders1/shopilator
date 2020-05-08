@@ -1,2 +1,9 @@
+
 <h1><%=@list.name%></h1>
 
+<% if @list.items.any? %>
+    <%= render "items/item" %>
+    <% end %>
+
+<Label>ADD ITEM:</Label>
+<%= render 'items/form', item: @list.items.build %>
