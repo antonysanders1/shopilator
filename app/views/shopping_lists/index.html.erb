@@ -12,7 +12,7 @@
         <ul>
             <li> <a href="/" class="header-link">Account</a></li>
             <li><a href="/" class="header-link">My Lists</a></li>
-            <li><a href="/" class="header-link">Create A New List</a></li>
+            <li><%= link_to "Create A New List", new_user_shopping_list_path(current_user, @list) %></li>
             <li><a href="/" class="header-link">Contact</a></li>
             <li><a href="/logout" class="header-link">Logout</a></li>
         </ul>
@@ -26,13 +26,13 @@
     <table id="list-table" >
         <tr id="list-tr" >
             <td class="list-td" id="date">
-                <label id="month-day">JAN 01</label><br>
-                <label id="year">2020</label>
+                <label id="month-day"><%= list.created_at.strftime("%b %d") %></label><br>
+                <label id="year"><%= list.created_at.strftime("%Y") %></label>
             </td>
             <td class="list-td" id="details"> 
                 <label ><a id="list-name" href="/shopping_lists/<%=list.id%>"><%=list.name%></a></label>
-                <label> <a href="/" class="view-item-list"></a> View List</label><br>
-                <label id="store-name"><%= list.store_id %> {STORE NAME HERE}</label>
+                <label> <a href="/" class="view-item-list"></a></label><br>
+                <label id="store-name"><%= list.store.name %></label>
             </td> 
             <td class="list-td" id="budget">
                 <label id="total">$100</label>
