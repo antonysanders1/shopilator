@@ -27,10 +27,15 @@ class ItemsController < ApplicationController
       end
     end
 
+    def destroy
+      @item.destroy
+      redirect_to shopping_list_path
+    end
+
 
     private
     def item_params
-        params.require(:item).permit(:name, :price)
+        params.require(:item).permit(:name, :price, :user_id, :store_id)
     end
 
     def set_shopping_list
