@@ -6,7 +6,7 @@ class WebsiteController < ApplicationController
     else
       render :index
     end
-    
-   
   end
+
+
 end
