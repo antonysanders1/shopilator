@@ -13,8 +13,7 @@ class ShoppingListsController < ApplicationController
 
   def show
     @list = current_user.shopping_lists.find(params[:id])
-    
-    #@item = Item.new
+    @item = Item.new
   end
   
 
@@ -26,7 +25,7 @@ class ShoppingListsController < ApplicationController
     @list = ShoppingList.new(list_params)
 
     if @list.save
-      redirect_to user_shopping_lists_path
+      redirect_to shopping_list_path(@list)
     else
       render :new
     end
