@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_shopping_list, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_shopping_list, only: [:show, :create, :edit, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
     def destroy
       @item.destroy
-      redirect_to shopping_list_path
+      redirect_to @list, notice: "Item removed."
     end
 
 
