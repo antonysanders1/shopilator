@@ -164,6 +164,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    table_print (1.5.6)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -183,6 +184,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    will_paginate (3.3.0)
     zeitwerk (2.3.0)
 
 PLATFORMS
@@ -202,9 +204,11 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
+  table_print
   therubyracer
   turbolinks (~> 5)
   web-console (>= 3.3.0)
+  will_paginate (~> 3.3)
 
 RUBY VERSION
    ruby 2.6.1p33

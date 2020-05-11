@@ -13,9 +13,11 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker', '~> 5.x'
+gem "table_print"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+#Paginate provides a simple API for performing paginated queries with Active Record
+gem 'will_paginate', '~> 3.3'
 gem 'jbuilder', '~> 2.7'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Redis adapter to run Action Cable in production
