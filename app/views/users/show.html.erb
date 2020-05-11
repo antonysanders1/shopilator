@@ -1,1 +1,10 @@
-<h1>Welcome, <%= @user.username %> </h1>
+<%= render 'partials/header'%>
+
+
+<h1>Account Settings: <%= @user.username %> </h1>
+
+<%if @user.shopping_lists_count > 0 %>
+    <label>Total Shopping Lists: <%= @user.shopping_lists_count %></label>
+<% else %>
+    <label> You haven't created any shopping lists yet</label>
+<% end %>
