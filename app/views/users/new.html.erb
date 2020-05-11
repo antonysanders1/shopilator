@@ -1,13 +1,24 @@
 <div class="signup-form">
-    <img src="shopilator.jpg">
+    <img src="https://i.ibb.co/BC91qF6/shopilator-green-nobkg.png" class="auth-img">
             <h1>Better Manage Your Grocery Time!</h1>
             <p> <strong>Create an account on Shopilator to access free budegeting tools.</strong> </p>
 
     <%= form_for @user do |f| %>
+        <div style="color:red">
+        <% if @user.errors.any? %>
+            <label style="font-weight: bold">Oops, we hit a snag!</label>
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                <li style="font-size: 12px; text-align: left; "><%= message %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </div>
+
         <%= f.text_field :username, placeholder: "Name", class: "input-box"%> <br>
         <%= f.email_field :email, placeholder: "Email", class: "input-box"%> <br>
         <%= f.password_field :password, placeholder: "Password", class: "input-box" %> <br>
-        <%= f.submit "Login", class: "signup-btn"%><br>
+        <%= f.submit "Get Started", class: "signup-btn"%><br>
         <hr>
             <p class="or">OR</p>
             <button type="button" class="twitter-btn">Login with Twitter</button><br>
