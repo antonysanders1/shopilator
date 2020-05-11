@@ -1,10 +1,11 @@
 class ShoppingListsController < ApplicationController
   before_action :require_login
-  
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+
   def index
     if params[:user_id].present?
       @user = current_user
-      @lists = current_user.shopping_lists.all
+      @lists = current_user.shopping_lists.all.recent.paginate(page: params[:page], per_page: 10)      
     else
       redirect_to user_shopping_lists_path
     end
@@ -12,8 +13,7 @@ class ShoppingListsController < ApplicationController
 
 
   def show
-    @list = current_user.shopping_lists.find(params[:id])
-    @item = Item.new
+    @user = current_user
   end
   
 
@@ -31,15 +31,21 @@ class ShoppingListsController < ApplicationController
     end
   end
 
-  
-
   def edit
-    
+    set_list
+  end
+
+  def update
+    set_list
   end
 
   private
   def list_params
     params.require(:shopping_list).permit(:name, :store_id, :user_id)
+  end
+
+  def set_list
+    @list = current_user.shopping_lists.find(params[:id])
   end
 
   
