@@ -1,7 +1,9 @@
-#Stores
 Store.destroy_all
 Item.destroy_all
 
+User.create(username: 'test', email: 'test@test.com', password: '12345')
+
+#Stores
 Store.create(name: 'Aldi')
 Store.create(name: 'CVS')
 Store.create(name: 'Costco')
@@ -20,35 +22,35 @@ Store.create(name: 'Whole Foods')
 #Items
 50.times do
     Item.create([{
-        name: Faker::Commerce.product_name.unique.product_name
-        price: Faker::Commerce.price(range: 10.0..50.0, as_string: true)
+        name: Faker::Commerce.product_name,
+        price: Faker::Number.decimal(l_digits: 2, r_digits: 2)
     }])
 end
 
-# 50.times do
-#     Item.create([{
-#         name: Faker::Food.fruits.unique.fruits
-#         price: Faker::Commerce.price(range: 0.99..6.0, as_string: true)
-#     }])
-# end
+30.times do
+    Item.create([{
+        name: Faker::Food.fruits,
+        price: Faker::Commerce.price(range: 0.99..6.0)
+    }])
+end
 
-# 50.times do
-#     Item.create([{
-#         name: Faker::Food.vegetables.unique.vegetables
-#         price: Faker::Commerce.price(range: 0.99..6.0, as_string: true)
-#     }])
-# end
+30.times do
+    Item.create([{
+        name: Faker::Food.vegetables,
+        price: Faker::Commerce.price(range: 0.99..6.0)
+    }])
+end
 
-# 30.times do
-#     Item.create([{
-#         name: Faker::Food.spice.unique.spice
-#         price: Faker::Commerce.price(range: 0.99..4.0, as_string: true)
-#     }])
-# end
+30.times do
+    Item.create([{
+        name: Faker::Food.spice,
+        price: Faker::Commerce.price(range: 0.99..4.0)
+    }])
+end
 
-# 50.times do
-#     Item.create([{
-#         name: Faker::Food.dish.unique.dish
-#         price: Faker::Commerce.price(range: 5.0..10.0, as_string: true)
-#     }])
-# end
+30.times do
+    Item.create([{
+        name: Faker::Food.dish,
+        price: Faker::Commerce.price(range: 5.0..10.0)
+    }])
+end
