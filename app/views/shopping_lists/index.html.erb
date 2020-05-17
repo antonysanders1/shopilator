@@ -21,10 +21,10 @@
                     <label class="no-total">No Items Added</label>
                 <% elsif list.budget >= list.items.sum(:price) %>
                     <label class="total" style="color:green">$<%= list.items.sum(:price).truncate(2) %></label><br>
-                    <label id="store-name">+<%= list.budget - list.items.sum(:price) %> saved</label>
+                    <label id="store-name">+<%= (list.budget - list.items.sum(:price)).truncate(2) %> saved</label>
                 <% elsif list.budget < list.items.sum(:price) %>
-                    <label class="total" style="color:red">$<%= list.items.sum(:price) %></label><br>
-                    <label id="store-name">-<%= list.items.sum(:price) - list.budget %> over budget </label>
+                    <label class="total" style="color:red">$<%= list.items.sum(:price).truncate(2) %></label><br>
+                    <label id="store-name">-<%= (list.items.sum(:price) - list.budget).truncate(2) %> over budget </label>
                 <% end %>
                     
             </td>

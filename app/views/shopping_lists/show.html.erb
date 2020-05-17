@@ -15,9 +15,9 @@ BUDGET:
 </h2>
 
 <% if @list.items.any? %>
-    <%= render @list.items %>
-    <label>TOTAL: <%= @list.items.sum(:price).truncate(2) %> </label>
-    <% end %> <br>
+    <%= render @list.items %><br>
+    <label> <strong> TOTAL: <%= @list.items.sum(:price).truncate(2) %> </strong></label>
+    <% end %> <br><br>
 
 <Label>ADD ITEM:</Label>
 <%= render 'items/form', item: @list.items.build %>

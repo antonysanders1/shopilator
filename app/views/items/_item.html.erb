@@ -1,6 +1,11 @@
-<label> <%= link_to item.name, edit_shopping_list_item_path(@list, item)  %> | <%= item.price%> </label><br>
+<label> 
+    <strong>
+    
+<%= link_to item.name, edit_shopping_list_item_path(@list, item)  %> | <%= item.price%> 
+    </strong>
+</label>
 
-<p> Edit this product:</p>
+<label> Edit this product:</label>
 
 <%= render 'items/form', item: item %>
 
