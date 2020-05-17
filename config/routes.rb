@@ -8,16 +8,15 @@ get "/logout", to: "sessions#destroy"
 get 'about', to: 'static#about'
 get 'services', to: 'static#services'
 get 'contact', to: 'static#contact'
+get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
 
 resources :users, only: [:create, :new, :edit, :show] do
   resources :shopping_lists, only: [:index, :new, :create]
 end
 
-resources :shopping_lists, only: [:edit, :show, :destroy] do
-  resources :items, only: [:index, :new, :create]
+resources :shopping_lists, only: [:edit, :update, :show, :destroy] do
+  resources :items
 end
-
-resources :items, only: [:destroy]
 
 end

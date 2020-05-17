@@ -20,8 +20,8 @@
         <%= f.password_field :password, placeholder: "Password", class: "input-box" %> <br>
         <%= f.submit "Get Started", class: "signup-btn"%><br>
         <hr>
-            <p class="or">OR</p>
-            <button type="button" class="twitter-btn">Login with Twitter</button><br>
+            <p class="or">OR</p><br>
+            <%= link_to " Sign up with Google ", '/auth/google_oauth2', class: "google-btn" %><br><br>
             <p class="has-acount"> Already have and account? <%= link_to "LOGIN", login_path %> </p>
 
     <% end %>

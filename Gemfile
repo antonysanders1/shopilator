@@ -27,6 +27,13 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
  gem 'therubyracer'
  gem 'pry'
 
+ gem 'devise'
+ gem 'omniauth'
+ gem 'omniauth-google-oauth2'
+ gem 'activerecord-session_store'
+ gem 'dotenv-rails'
+
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
