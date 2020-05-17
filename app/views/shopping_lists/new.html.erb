@@ -1,10 +1,19 @@
 <h1>ShoppingLists#new</h1>
-
-
-<%= form_for @list, url:user_shopping_lists_path  do |f| %>
+<%= form_for @list, url: user_shopping_lists_path  do |f| %>
+<div style="color:white">
+        <% if @list.errors.any? %>
+            <label style="font-weight: bold">Oops, we hit a snag!</label>
+            <ul>
+                <% @list.errors.full_messages.each do |message| %>
+                <li style="font-size: 12px; text-align: left; "><%= message %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </div>
   
     <%= f.hidden_field "user_id", value: current_user.id  %>
     <%= f.text_field :name, placeholder: "Shopping List Name" %> <br>
+    <%= f.text_field :budget, placeholder: "0.00"  %> <br>
 
     
   <%= collection_select(:shopping_list, :store_id, Store.all,
@@ -16,10 +25,3 @@
 
 <% end %>
 
-
-
-t.string "name"
-    t.integer "user_id"
-    t.integer "store_id"@
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false

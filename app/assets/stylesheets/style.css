@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-image: linear-gradient(to bottom, rgba(0, 92, 153, 0.7), rgba(236, 240, 241, 1.0));
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: top
 }
@@ -170,7 +170,13 @@ label.title {
     background: #fff;
     padding: 30px;
     margin: 40px auto;
+    border-radius: 8px;
     text-align: center;
+}
+
+.auth-img {
+    height: 80px;
+    width: 80px;
 }
 
 .signup-form h1 {
@@ -179,7 +185,7 @@ label.title {
 }
 
 .input-box {
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 10px;
     margin: 5px 0;
     width: 95%;
@@ -194,12 +200,13 @@ label.title {
     width: 200px;
     border: none;
     outline: none;
+    color: #fff;
+    font-weight: bold;
     background: #5bbe43;
 }
 
 .signup-btn:hover {
     border-radius: 8px;
-    padding: 12px;
     margin: 10px 0;
     width: 200px;
     border: none;
@@ -213,14 +220,28 @@ label.title {
     margin: -18px auto 5px;
 }
 
-.twitter-btn {
-    background-color: #21afde;
-    border-radius: 20px;
+.google-btn {
+    background-color: #de5246;
+    border-radius: 8px;
     padding: 10px;
-    margin: 5px 0;
-    width: 60%;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #fff;
     border: none;
     outline: none;
+    text-decoration: none;
+}
+
+.google-btn:hover {
+    background-color: #b92d20;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-decoration: none;
 }
 
 .has-account {
@@ -273,7 +294,7 @@ label.user-title {
 
 #details {
     text-decoration: none;
-    width: 70%;
+    width: 68%;
     background-color: #fff;
 }
 
@@ -289,17 +310,23 @@ label.user-title {
 }
 
 #store-name {
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #budget {
-    width: 10%;
+    width: 12%;
     background-color: #fff;
     text-align: center;
 }
 
-#total {
-    font-size: 40px;
+.no-total {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.total {
+    font-size: 24px;
     font-weight: bolder;
 }
 
@@ -313,6 +340,9 @@ label.user-title {
 #edit-list {
     font-size: 32px;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    text-decoration: none;
 }
 
 #edit-list:hover {
@@ -324,6 +354,9 @@ label.user-title {
 #delete-list {
     font-size: 18px;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    text-decoration: none;
 }
 
 #delete-list:hover {
@@ -350,4 +383,14 @@ label.user-title {
     color: black;
     text-decoration: none;
     font-size: 18px;
+}
+
+.list-pages {
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    align-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
 }

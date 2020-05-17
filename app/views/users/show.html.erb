@@ -4,7 +4,14 @@
 <h1>Account Settings: <%= @user.username %> </h1>
 
 <%if @user.shopping_lists_count > 0 %>
-    <label>Total Shopping Lists: <%= @user.shopping_lists_count %></label>
+    <label> <strong>Total Shopping Lists:</strong> <%= @user.shopping_lists_count %></label>
+    <br><br>
+    <label>
+        <strong>Where you shop:</strong>
+    </label><br>
+    <%= render @user.stores.uniq %>
+    
 <% else %>
     <label> You haven't created any shopping lists yet</label>
 <% end %>
+

@@ -1,11 +1,12 @@
 <%= form_with(model: [ @list, item ], local: true) do |f| %>
     <p>
         <%=f.hidden_field "shopping_list_id", value: @list.id  %>
-        <%=f.hidden_field "user_id", value: current_user.id  %>
+        <%=f.hidden_field "user_id", value: @list.user_id  %>
+        <%=f.hidden_field "store_id", value: @list.store_id  %>
         <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.label :price %>
-        <%= f.text_field :price %>
+        <%= f.text_field :price, value: item.price%>
     </p>
-    <p> <%=f.submit "Add Item" %> </p>
+    <p> <%=f.submit %> </p>
     <% end %>

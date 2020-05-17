@@ -1,7 +1,10 @@
-<label> <%= item.name %> | <%=item.price%> </label>
+<label> <%= link_to item.name, edit_shopping_list_item_path(@list, item)  %> | <%= item.price%> </label><br>
 
-<label >REMOVE ITEM</label>
+<p> Edit this product:</p>
+
+<%= render 'items/form', item: item %>
+
+<p> <%= button_to "REMOVE ITEM", shopping_list_item_path(@list, item), method: :delete %> </p>
 
 <hr>
 
-<%= render 'items/form', item: item %>

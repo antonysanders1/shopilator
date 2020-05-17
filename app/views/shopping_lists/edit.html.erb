@@ -1,0 +1,24 @@
+<%= form_for @list, url: shopping_list_url do |f| %>
+<div style="color:white">
+        <% if @list.errors.any? %>
+            <label style="font-weight: bold">Oops, we hit a snag!</label>
+            <ul>
+                <% @list.errors.full_messages.each do |message| %>
+                <li style="font-size: 12px; text-align: left; "><%= message %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </div>
+  
+    <%= f.hidden_field "user_id", value: current_user.id  %>
+    <%= f.text_field :name, value: @list.name %> <br>
+    <%= f.number_field :budget, value: @list.budget %> <br>
+
+    
+  <%= collection_select(:shopping_list, :store_id, Store.all,
+                  :id, :name,
+                 {:prompt => 'Please select a Store'}) %> <br>
+ 
+        
+        <%= f.submit "CREATE", class: "signup-btn"%><br>
+        <% end %>

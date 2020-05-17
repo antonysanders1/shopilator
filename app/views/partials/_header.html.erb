@@ -1,0 +1,37 @@
+<% if current_user %>
+    
+    <nav>
+        
+        <input type="checkbox" id="check">
+        
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+            
+        <img src="https://i.ibb.co/GWnZgd2/shopilator-logo-wht-nobkg.png" id="logoimg">
+        <label class="user-title"><%=current_user.username%></label>
+
+            <ul>
+                <li> <%= link_to "Account", user_path(current_user), class: "header-link"%></a></li>
+                <li><a href="/" class="header-link">My Lists</a></li>
+                <li><%= link_to "Create A New List", new_user_shopping_list_path(current_user, @list), class: "header-link" %></li>
+                <li><a href="/" class="header-link">Contact</a></li>
+                <li><a href="/logout" class="header-link">Logout</a></li>
+            </ul>
+    </nav>
+    <% else %>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <img src="https://i.ibb.co/GWnZgd2/shopilator-logo-wht-nobkg.png" id="logoimg">
+                <ul>
+                    <li> <a href="/" class="header-link">Home</a></li>
+                    <li><a href="/about" class="header-link">About Us</a></li>
+                    <li><a href="/services" class="header-link">Services</a></li>
+                    <li><a href="/contact" class="header-link">Contact</a></li>
+                    <li><a href="/login" class="header-link">Login</a></li>
+                </ul>
+        </nav>
+    <% end %>

@@ -1,9 +1,26 @@
+<%= render 'partials/header'%>
+
+<label><%= notice %> </label>
 
 <h1><%=@list.name%></h1>
 
-<% if @list.items.any? %>
-    <%= render "items/item" %>
+<h2 class="list-td">
+BUDGET: 
+    <% if @list.budget >= @list.items.sum(:price) %>
+        <label style="color:green">$<%= @list.budget %></label>
+    <% elsif @list.budget < @list.items.sum(:price) %>
+        <label style="color:red">$<%= @list.budget %></label>
     <% end %>
+        
+</h2>
+
+<% if @list.items.any? %>
+    <%= render @list.items %>
+    <label>TOTAL: <%= @list.items.sum(:price).truncate(2) %> </label>
+    <% end %> <br>
 
 <Label>ADD ITEM:</Label>
 <%= render 'items/form', item: @list.items.build %>
+
+<%= link_to "Edit Shopping List details", edit_shopping_list_path(@list)%> |
+<%= link_to "Back", user_shopping_lists_path(current_user)%>

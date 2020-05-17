@@ -1,15 +1,25 @@
   <div class="signup-form">
-    <img src="shopilator.jpg">
+        <img src="https://i.ibb.co/BC91qF6/shopilator-green-nobkg.png" class="auth-img">
         <h1>Welcome Back!</h1>
-        <p> <strong>Login to access your free budegeting tools.</strong> </p>
+        <p> <strong>Login to access your account.</strong> </p>
 
         <%= form_tag (sessions_path) do %>
+        <div style="color:red">
+        <% if @user.errors.any? %>
+            <label style="font-weight: bold">Oops, we hit a snag!</label>
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </div>
         <%= email_field_tag :email, "", placeholder: "Email", class: "input-box"%> <br>
         <%= password_field_tag :password, "", placeholder: "Password", class: "input-box" %> <br>
-        <%= submit_tag "Get Started", class: "signup-btn"%>  <br>
+        <%= submit_tag "Login", class: "signup-btn"%>  <br>
         <hr>
-        <p class="or">OR</p>
-        <button type="button" class="twitter-btn">Login with Twitter</button><br>
+        <p class="or">OR</p><br>
+        <%= link_to "Log In with Google", '/auth/google_oauth2', class: "google-btn" %><br><br>
         <p class="has-acount"> Don't have an account? <%= link_to "SIGN UP", new_user_path %> </p>
 
     <% end %>
